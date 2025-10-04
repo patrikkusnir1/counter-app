@@ -1,13 +1,6 @@
-// document.getElementById("count").innerText = 5;
-
-// change the count-el in the HTML to reflect to new count
-
-//camelCase
-let countEl = document.getElementById("count-el"); // pass-in arguments
-
-console.log(countEl);
-
+// grab the count-el element, store it in a countEl variable
 let count = 0;
+let countEl = document.getElementById("count-el");
 
 function increment() {
   count = count + 1;
