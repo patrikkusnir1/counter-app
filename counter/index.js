@@ -1,4 +1,3 @@
-// 1. Grab the save-el paragraph and store it in a variable called saveEl
 let saveEl = document.getElementById("save-el")
 let countEl = document.getElementById("count-el");
 let count = 0;
@@ -13,5 +12,6 @@ function increment() {
 function save() {
   let countStr = count + " - ";
   saveEl.textContent += countStr;
-
+  count = 0;
+  countEl.textContent = count;
 }
