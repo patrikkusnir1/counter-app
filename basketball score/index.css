@@ -53,6 +53,10 @@ h3 {
   margin-top: 26px;
 }
 
+#timer-reset {
+  margin-top: 20px;
+}
+
 @font-face {
   font-family: "Cursed Timer ULiL";
   src: url("CursedTimerUlil-Aznm.ttf");
@@ -70,5 +74,22 @@ h3 {
 button {
     font-size: 18px;
     padding: 10px;
+}
 
+.guest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.reset-buttons {
+  margin-top: 20px;
+  text-align: right;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  margin-right: 20px;
 }

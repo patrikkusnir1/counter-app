@@ -7,7 +7,7 @@ let timer; // hold remaining time in seconds
 // show initial values
 document.getElementById("home-score").textContent = homeScore;
 document.getElementById("guest-score").textContent = guestScore;
-document.getElementById("timer").textContent = "60:00";
+document.getElementById("timer").textContent = "48:00";
 
 // Score functions
 
@@ -67,7 +67,9 @@ function startTimer(display) {
 
   window.onload = function() {
     let display = document.getElementById("timer");
-    timer = 60 * 60; // 60 minutes
+    timer = 60 * 48; // 60 minutes
+
+
     // start or resume
     document.getElementById("start").addEventListener("click", function () {
       if (!intervalId) {
@@ -80,4 +82,11 @@ function startTimer(display) {
       clearInterval(intervalId);
       intervalId = null; // so we know it is stopped
     });
-  };
+    document.getElementById("timer-reset").addEventListener("click", function () {
+            clearInterval(intervalId);
+            intervalId = null;
+            timer = 60 * 48;
+            display.textContent = "48:00";
+          });
+      };
+  
