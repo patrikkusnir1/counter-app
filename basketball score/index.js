@@ -2,13 +2,14 @@
 let homeScore = 0;
 let guestScore = 0;
 let intervalId;
+let timer; // hold remaining time in seconds
 
-// timer 
-let timer = "60:00"
-
+// show initial values
 document.getElementById("home-score").textContent = homeScore;
 document.getElementById("guest-score").textContent = guestScore;
-document.getElementById("timer").textContent = timer;
+document.getElementById("timer").textContent = "60:00";
+
+// Score functions
 
 function homeAdd1() {
   homeScore += 1;
@@ -47,12 +48,11 @@ function reset() {
   document.getElementById("home-score").textContent = homeScore;
 }
 
-function startTimer(duration, display) {
-  timer = duration;
-
+// Timer function
+function startTimer(display) {
   intervalId = setInterval(function() {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
+    let minutes = parseInt(timer / 60, 10);
+    let seconds = parseInt(timer % 60, 10);
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
@@ -60,21 +60,24 @@ function startTimer(duration, display) {
     display.textContent = minutes + ":" + seconds;
 
     if (--timer < 0) {
-      clearInterval(intervalId); // // stop at 00:00
+      clearInterval(intervalId); // stop at 00:00
     }
   }, 1000);
   }
 
   window.onload = function() {
-    let count = 60 * 60; // 60 minutes
     let display = document.getElementById("timer");
-
-    document.getElementById("start").addEventListener("click", function() {
-      clearInterval(intervalId);
-      startTimer(count, display);
+    timer = 60 * 60; // 60 minutes
+    // start or resume
+    document.getElementById("start").addEventListener("click", function () {
+      if (!intervalId) {
+        startTimer(display);
+      }
     });
 
+    // Stop or pause
     document.getElementById("stop").addEventListener("click", function () {
       clearInterval(intervalId);
+      intervalId = null; // so we know it is stopped
     });
   };
