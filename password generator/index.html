@@ -16,17 +16,24 @@
   <div class="wrapper">
     <h1>Generate a <span>random password</span></h1>
     <p>Never use an insecure password again.</p>
+
     <button id="password-generate">Generate password</button>
     <hr>
-    <label for="characters">
-      <p>How many characters do you want?</p>
-      <input id="characters" type="number" placeholder="Number of characters" step="0.01">
-      <p>Password with symbols?</p>
-      <input id="symbols" type="checkbox">
-    </label>
+    <div class="form-row">
+      <label for="characters" class="stacked-label">
+          <span>How many characters do you want?</span>
+          <input id="characters" type="number" placeholder="Number of characters" step="0.01">
+      </label>
+      
+      <label for="symbols" class="checkbox-label"></label>
+          <span>Password with symbols?</span>
+          <input id="symbols" type="checkbox">
+      </label>
+    </div>
+
     <div class="password-wrapper">
-        <p id="password-el1"></p>
-        <p id="password-el2"></p>
+        <p id="password-el1">Password 1</p>
+        <p id="password-el2">Password 2</p>
     </div>
   </div>
   <script src="index.js"></script>
