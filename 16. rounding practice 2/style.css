@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+
+#purchase-btn {
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: coral;
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
