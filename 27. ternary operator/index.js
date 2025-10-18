@@ -1,15 +1,10 @@
-const exerciseTimeMins = 40;
+const playerGuess = 9;
+const correctAnswer = 6;
 
-// let message = "";
+// use ternary operator for this condition 
+// let player know if their guess was too high, too low or right
 
-// if (exerciseTimeMins < 30) {
-//   message = "You need to try harder!"
-// }
-
-// else {
-//   message = "Doing good!"
-// }
-
-const message = exerciseTimeMins < 30 ? "You need to try harder!" : "Doing good!"
-
+const message = playerGuess < correctAnswer ? "Too low!" 
+  : playerGuess > correctAnswer ? "Too high!"
+  : "Exactly right!";
 console.log(message)
